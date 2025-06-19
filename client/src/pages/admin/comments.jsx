@@ -1,6 +1,6 @@
 import React, { use, useEffect, useState } from 'react'
 import { comments_data } from '../../assets/assets';
-import CommentTableItem from '../../components/admin/commentTableItem';
+import commentTableItem from '../../components/admin/commentTableItem';
 import toast from 'react-hot-toast';
 import { useAPPContext } from '../../context/Appcontext';
 
@@ -47,7 +47,7 @@ const Comments = () => {
             </tr>
           </thead>
           <tbody>
-           {comments.filter((comment) => { if (filter === "Approved") return comment.isApproved === true;else return comment.isApproved === false; }).map((comment, index) => (<CommentTableItem key={comment._id} comment={comment} index={index + 1} fetchComments={fetchComments}/>))}
+           {comments.filter((comment) => { if (filter === "Approved") return comment.isApproved === true;else return comment.isApproved === false; }).map((comment, index) => (<commentTableItem key={comment._id} comment={comment} index={index + 1} fetchComments={fetchComments}/>))}
       </tbody>
         </table>
       </div>
